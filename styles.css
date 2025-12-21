@@ -131,7 +131,26 @@ nav a {
     color: var(--text-dark);
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
+    color: var(--primary-green);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.phone-link {
+    font-weight: 700;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.phone-link:hover {
     color: var(--primary-green);
 }
 
@@ -143,6 +162,11 @@ nav a:hover {
     color: var(--white);
     padding: 150px 0 100px;
     text-align: center;
+}
+
+.page-hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(rgba(0, 80, 40, 0.9), rgba(0, 113, 61, 0.9)), url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&q=80');
 }
 
 .hero h1 {
