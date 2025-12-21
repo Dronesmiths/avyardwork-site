@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home1/spreaeb3/public_html/
+    - export DEPLOYPATH=/home1/spreaeb3/public_html/website_209e7369/
     - /bin/cp -R * $DEPLOYPATH
