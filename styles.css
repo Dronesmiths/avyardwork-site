@@ -7,7 +7,7 @@
     --text-light: #666666;
     --white: #ffffff;
     --bg-light: #F9F9F9;
-    
+
     /* Fonts */
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Open Sans', sans-serif;
@@ -31,9 +31,15 @@ body {
     background-color: var(--white);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
-    font-weight: 800; /* Extra Bold per reference */
+    font-weight: 800;
+    /* Extra Bold per reference */
     color: var(--primary-green);
     margin-bottom: 1rem;
 }
@@ -90,7 +96,7 @@ a {
 /* Header */
 header {
     background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -125,7 +131,8 @@ nav a {
     color: var(--text-dark);
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active {
     color: var(--primary-green);
 }
 
@@ -158,15 +165,18 @@ nav a:hover, nav a.active {
 }
 
 .page-hero {
-    padding: 100px 0 60px;
-    background: linear-gradient(rgba(0, 80, 40, 0.9), rgba(0, 113, 61, 0.9)), url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&q=80');
+    padding: 120px 0 80px;
+    background: linear-gradient(rgba(0, 80, 40, 0.9), rgba(0, 113, 61, 0.9)), url('https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&q=80');
+    /* Mowing image as BG */
+    background-size: cover;
+    background-position: center;
 }
 
 .hero h1 {
     font-size: 3.5rem;
     color: var(--white);
     margin-bottom: 20px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero p {
@@ -221,7 +231,8 @@ nav a:hover, nav a.active {
     background: var(--white);
     padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft glassmorphism feel */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Soft glassmorphism feel */
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -252,7 +263,7 @@ nav a:hover, nav a.active {
     overflow: hidden;
     border-radius: 20px;
     height: 300px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .service-bg {
@@ -271,7 +282,7 @@ nav a:hover, nav a.active {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     padding: 30px;
     color: var(--white);
 }
@@ -345,7 +356,7 @@ nav a:hover, nav a.active {
     margin-bottom: 15px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .accordion-header {
@@ -376,7 +387,8 @@ nav a:hover, nav a.active {
 }
 
 .accordion-item.active .accordion-content {
-    max-height: 200px; /* Adjust as needed */
+    max-height: 200px;
+    /* Adjust as needed */
     padding-bottom: 20px;
 }
 
@@ -412,7 +424,7 @@ footer {
 }
 
 .copyright {
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
     font-size: 0.9rem;
     opacity: 0.7;
@@ -421,105 +433,109 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* Simple hide for now, would need JS for toggle */
+        display: none;
+        /* Simple hide for now, would need JS for toggle */
     }
-    
+
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-btns {
         flex-direction: column;
         align-items: center;
     }
-    
-/* Comparison Slider */
-.comparison-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 40px auto;
+
+
+
+    /* Responsive adjustments */
+    .img-overlay img {
+        width: 100vw;
+    }
+}
+
+/* Luxury Gallery */
+.luxury-gallery {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    flex: 1;
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.comparison-image-container {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    /* Fixed height for consistency */
     position: relative;
+}
+
+.gallery-item img {
     width: 100%;
-    line-height: 0; /* Removing small gap */
-}
-
-.comparison-image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%; /* Initial split */
-    height: 100%;
-    overflow: hidden;
-    border-right: 2px solid var(--white);
-}
-
-.img-overlay img {
-    /* Critical: Overlay image needs to be same size as container to align */
-    width: 100%; 
-    max-width: unset; /* Override responsive defaults if any */
-    /* We need to set the width to the container's full width explicitly via JS or assume container matches */
-    width: 800px; /* Fallback, but JS will adjust */
     height: 100%;
     object-fit: cover;
-    object-position: left;
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.4, 1);
 }
 
-.slider-handle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background-color: var(--white);
-    border-radius: 50%;
-    cursor: ew-resize;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
+.gallery-item:hover img {
+    transform: scale(1.05);
 }
 
-.slider-handle::before {
-    content: '\f337'; /* FontAwesome arrows */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    color: var(--primary-green);
-}
-
-.slider-label {
-    position: absolute;
-    top: 20px;
-    padding: 5px 15px;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    border-radius: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    pointer-events: none;
-}
-
-.label-before { left: 20px; }
-.label-after { right: 20px; }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
-    .img-overlay img {
-        width: 100vw; /* Approx for mobile if logic fails */
+    .luxury-gallery {
+        flex-direction: column;
+        height: auto;
     }
+
+    .gallery-item {
+        height: 300px;
+    }
+}
+
+/* About Page Specifics */
+.about-feature-img {
+    margin-bottom: 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border: 5px solid white;
+}
+
+.about-feature-img img {
+    width: 100%;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.about-feature-img:hover img {
+    transform: scale(1.02);
+}
+
+.serving-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.serving-pill {
+    background-color: var(--white);
+    color: var(--primary-green);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 113, 61, 0.1);
+    transition: all 0.3s ease;
+}
+
+.serving-pill:hover {
+    background-color: var(--primary-green);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 113, 61, 0.2);
 }

@@ -77,29 +77,17 @@
 
             <div style="text-align: center; margin-bottom: 50px;">
                 <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Dedicated to High Desert Beauty</h2>
-                <p style="font-size: 1.1rem; color: var(--text-light);">
-                    Serving Lancaster, Palmdale, and Quartz Hill with pride.
+                <p style="font-size: 1.1rem; color: var(--text-light); max-width: 600px; margin: 0 auto;">
+                    Serving Lancaster, Palmdale, and Quartz Hill with pride. We understand what it takes to keep a yard
+                    looking lush in our unique climate.
                 </p>
             </div>
 
-            <!-- Before/After Slider -->
-            <div class="comparison-container" id="comparisonWidget">
-                <div class="comparison-image-container">
-                    <!-- The 'After' image (background) -->
-                    <img src="images/after.png" alt="Fully manicured drought tolerant landscape in Lancaster">
-                    <span class="slider-label label-after">After</span>
-
-                    <!-- The 'Before' image (overlay) -->
-                    <div class="img-overlay" id="imgOverlay">
-                        <img src="images/before.png" alt="Overgrown yard before cleanup" id="overlayImage">
-                        <span class="slider-label label-before">Before</span>
-                    </div>
-                </div>
-                <div class="slider-handle" id="sliderHandle"></div>
+            <!-- Feature Image -->
+            <!-- Feature Image -->
+            <div class="about-feature-img">
+                <img src="images/about-feature.png" alt="Manicured Landscape in Antelope Valley">
             </div>
-            <p style="text-align: center; font-style: italic; color: #666; margin-bottom: 60px;">
-                Drag the slider to see the transformation.
-            </p>
 
             <!-- Story & Values -->
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 60px;">
@@ -147,17 +135,25 @@
             </div>
 
             <!-- Service Areas List -->
-            <div style="background: var(--bg-light); padding: 40px; border-radius: 15px; text-align: center;">
-                <h3 style="margin-bottom: 20px;">Proudly Serving</h3>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">West Lancaster</span>
-                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">East Lancaster</span>
-                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">Palmdale (West &
-                        East)</span>
-                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">Quartz Hill</span>
-                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">Rancho Vista</span>
-                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">Rosamond</span>
+            <div
+                style="background: var(--bg-light); padding: 50px 40px; border-radius: 20px; text-align: center; margin-bottom: 60px;">
+                <h3 style="margin-bottom: 30px; color: var(--text-dark);">Proudly Serving</h3>
+                <div class="serving-pills">
+                    <span class="serving-pill">West Lancaster</span>
+                    <span class="serving-pill">East Lancaster</span>
+                    <span class="serving-pill">Palmdale</span>
+                    <span class="serving-pill">Quartz Hill</span>
+                    <span class="serving-pill">Rancho Vista</span>
+                    <span class="serving-pill">Rosamond</span>
+                    <span class="serving-pill">Littlerock</span>
                 </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div style="text-align: center; padding: 40px 0;">
+                <h3 style="margin-bottom: 15px;">Ready to Transform Your Yard?</h3>
+                <p style="margin-bottom: 30px; color: var(--text-light);">Contact us today for a free estimate.</p>
+                <a href="contact.html" class="btn btn-primary">Get a Quote</a>
             </div>
 
         </div>
@@ -178,53 +174,7 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Simple script for the comparison slider
-        const container = document.getElementById('comparisonWidget');
-        const overlay = document.getElementById('imgOverlay');
-        const overlayImage = document.getElementById('overlayImage');
-        const handle = document.getElementById('sliderHandle');
-        let isDragging = false;
 
-        function updateSlider(x) {
-            const rect = container.getBoundingClientRect();
-            // Calculate percentage (0 to 100)
-            let percentage = ((x - rect.left) / rect.width) * 100;
-
-            // Clamp between 0 and 100
-            percentage = Math.max(0, Math.min(100, percentage));
-
-            overlay.style.width = percentage + '%';
-            handle.style.left = percentage + '%';
-        }
-
-        // Mouse Events
-        handle.addEventListener('mousedown', () => isDragging = true);
-        window.addEventListener('mouseup', () => isDragging = false);
-        window.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            updateSlider(e.clientX);
-        });
-
-        // Touch Events (Mobile)
-        handle.addEventListener('touchstart', () => isDragging = true);
-        window.addEventListener('touchend', () => isDragging = false);
-        window.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            // e.touches[0] gets the first touch point
-            updateSlider(e.touches[0].clientX);
-        });
-
-        // Ensure overlay image is sized correctly matching container
-        function resizeOverlayImage() {
-            if (overlayImage && container) {
-                overlayImage.style.width = container.offsetWidth + 'px';
-            }
-        }
-
-        window.addEventListener('resize', resizeOverlayImage);
-        window.addEventListener('load', resizeOverlayImage);
-    </script>
 </body>
 
 </html>
