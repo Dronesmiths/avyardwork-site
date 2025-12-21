@@ -4,7 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Avyard Work</title>
+    <title>About Avyard Work | Landscaping in Antelope Valley</title>
+    <meta name="description"
+        content="Avyard Work provides trusted landscaping services in Lancaster, Palmdale, and Quartz Hill. Specialized in drought-tolerant yards, cleanups, and regular maintenance.">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "LandscapingOrGardenStore",
+        "name": "Avyard Work",
+        "description": "Premium landscaping services specializing in high-desert yard care.",
+        "areaServed": [
+            { "@type": "City", "name": "Lancaster" },
+            { "@type": "City", "name": "Palmdale" },
+            { "@type": "City", "name": "Quartz Hill" },
+            { "@type": "City", "name": "Rosamond" },
+            { "@type": "City", "name": "Littlerock" }
+        ],
+        "knowsAbout": ["Drought Tolerant Landscaping", "Drip Irrigation", "Hardscaping", "Weed Abatement"]
+      }
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +39,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1.2">
 </head>
 
 <body>
@@ -43,33 +66,100 @@
     <!-- Page Hero -->
     <section class="hero page-hero">
         <div class="container">
-            <h1>About Us</h1>
-            <p>Dedicated to keeping your outdoors beautiful.</p>
+            <h1>About Avyard Work</h1>
+            <p>Your local landscaping experts in the Antelope Valley.</p>
         </div>
     </section>
 
-    <!-- Content -->
+    <!-- Main Content -->
     <section class="features" style="background: white;">
-        <div class="container" style="max-width: 800px;">
-            <h2 style="margin-bottom: 20px;">Our Story</h2>
-            <p style="margin-bottom: 40px; font-size: 1.1rem;">
-                Avyard Work was founded with a simple mission: to provide high-quality, reliable landscaping services to
-                our local community. We believe that a beautiful yard shouldn't be a hassle or a luxury—it should be a
-                standard that everyone can enjoy.
+        <div class="container" style="max-width: 900px;">
+
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Dedicated to High Desert Beauty</h2>
+                <p style="font-size: 1.1rem; color: var(--text-light);">
+                    Serving Lancaster, Palmdale, and Quartz Hill with pride.
+                </p>
+            </div>
+
+            <!-- Before/After Slider -->
+            <div class="comparison-container" id="comparisonWidget">
+                <div class="comparison-image-container">
+                    <!-- The 'After' image (background) -->
+                    <img src="images/after.png" alt="Fully manicured drought tolerant landscape in Lancaster">
+                    <span class="slider-label label-after">After</span>
+
+                    <!-- The 'Before' image (overlay) -->
+                    <div class="img-overlay" id="imgOverlay">
+                        <img src="images/before.png" alt="Overgrown yard before cleanup" id="overlayImage">
+                        <span class="slider-label label-before">Before</span>
+                    </div>
+                </div>
+                <div class="slider-handle" id="sliderHandle"></div>
+            </div>
+            <p style="text-align: center; font-style: italic; color: #666; margin-bottom: 60px;">
+                Drag the slider to see the transformation.
             </p>
 
-            <h2 style="margin-bottom: 20px;">Why We Are Different</h2>
-            <ul style="list-style: none; margin-bottom: 40px;">
-                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
-                        style="color: var(--primary-green); margin-right: 10px;"></i> <strong>Reliability:</strong> We
-                    show up when we say we will.</li>
-                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
-                        style="color: var(--primary-green); margin-right: 10px;"></i> <strong>Quality:</strong> We pay
-                    attention to the details that matter.</li>
-                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
-                        style="color: var(--primary-green); margin-right: 10px;"></i> <strong>Communication:</strong>
-                    You can always reach us at 661-484-4444.</li>
-            </ul>
+            <!-- Story & Values -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 60px;">
+                <div>
+                    <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Our Story</h3>
+                    <p style="margin-bottom: 20px;">
+                        Avyard Work started right here in the Antelope Valley with a truck, a mower, and a commitment to
+                        reliability. We noticed that many homeowners in <strong>Lancaster</strong> and
+                        <strong>Palmdale</strong> struggled to find landscapers who would show up on time and understand
+                        the unique challenges of our high-desert climate.
+                    </p>
+                    <p>
+                        We built our reputation on trust. Whether it's battling tumbleweeds in Rosamond or installing
+                        water-smart irrigation in Quartz Hill, we treat every property like it's our own.
+                    </p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Why We Are Different</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                            <i class="fas fa-water"
+                                style="color: var(--primary-green); margin-top: 5px; margin-right: 15px;"></i>
+                            <div>
+                                <strong>Water Wise:</strong> We specialize in xeriscaping and drought-tolerant plants
+                                that thrive in the AV without breaking your water budget.
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                            <i class="fas fa-check-circle"
+                                style="color: var(--primary-green); margin-top: 5px; margin-right: 15px;"></i>
+                            <div>
+                                <strong>Reliable:</strong> We run on a schedule. You'll get text updates, and you'll
+                                never have to guess when we're coming.
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: start;">
+                            <i class="fas fa-users"
+                                style="color: var(--primary-green); margin-top: 5px; margin-right: 15px;"></i>
+                            <div>
+                                <strong>Local Team:</strong> We live here. We know the wind, the heat, and the soil.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service Areas List -->
+            <div style="background: var(--bg-light); padding: 40px; border-radius: 15px; text-align: center;">
+                <h3 style="margin-bottom: 20px;">Proudly Serving</h3>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">West Lancaster</span>
+                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">East Lancaster</span>
+                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">Palmdale (West &
+                        East)</span>
+                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">Quartz Hill</span>
+                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">Rancho Vista</span>
+                    <span class="btn-secondary" style="pointer-events: none; font-size: 0.9rem;">Rosamond</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -88,6 +178,53 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Simple script for the comparison slider
+        const container = document.getElementById('comparisonWidget');
+        const overlay = document.getElementById('imgOverlay');
+        const overlayImage = document.getElementById('overlayImage');
+        const handle = document.getElementById('sliderHandle');
+        let isDragging = false;
+
+        function updateSlider(x) {
+            const rect = container.getBoundingClientRect();
+            // Calculate percentage (0 to 100)
+            let percentage = ((x - rect.left) / rect.width) * 100;
+
+            // Clamp between 0 and 100
+            percentage = Math.max(0, Math.min(100, percentage));
+
+            overlay.style.width = percentage + '%';
+            handle.style.left = percentage + '%';
+        }
+
+        // Mouse Events
+        handle.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            updateSlider(e.clientX);
+        });
+
+        // Touch Events (Mobile)
+        handle.addEventListener('touchstart', () => isDragging = true);
+        window.addEventListener('touchend', () => isDragging = false);
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            // e.touches[0] gets the first touch point
+            updateSlider(e.touches[0].clientX);
+        });
+
+        // Ensure overlay image is sized correctly matching container
+        function resizeOverlayImage() {
+            if (overlayImage && container) {
+                overlayImage.style.width = container.offsetWidth + 'px';
+            }
+        }
+
+        window.addEventListener('resize', resizeOverlayImage);
+        window.addEventListener('load', resizeOverlayImage);
+    </script>
 </body>
 
 </html>

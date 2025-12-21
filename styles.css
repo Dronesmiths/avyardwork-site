@@ -433,7 +433,93 @@ footer {
         align-items: center;
     }
     
-    .header-actions {
-        display: none; /* Hide top phone on very small screens if needed, or adjust */
+/* Comparison Slider */
+.comparison-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.comparison-image-container {
+    position: relative;
+    width: 100%;
+    line-height: 0; /* Removing small gap */
+}
+
+.comparison-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Initial split */
+    height: 100%;
+    overflow: hidden;
+    border-right: 2px solid var(--white);
+}
+
+.img-overlay img {
+    /* Critical: Overlay image needs to be same size as container to align */
+    width: 100%; 
+    max-width: unset; /* Override responsive defaults if any */
+    /* We need to set the width to the container's full width explicitly via JS or assume container matches */
+    width: 800px; /* Fallback, but JS will adjust */
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    border-radius: 50%;
+    cursor: ew-resize;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.slider-handle::before {
+    content: '\f337'; /* FontAwesome arrows */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary-green);
+}
+
+.slider-label {
+    position: absolute;
+    top: 20px;
+    padding: 5px 15px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    pointer-events: none;
+}
+
+.label-before { left: 20px; }
+.label-after { right: 20px; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .img-overlay img {
+        width: 100vw; /* Approx for mobile if logic fails */
     }
 }
