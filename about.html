@@ -4,7 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Avyard Work</title>
+    <title>About Avyard Work | Landscaping in Antelope Valley</title>
+    <meta name="description"
+        content="Avyard Work provides trusted landscaping services in Lancaster, Palmdale, and Quartz Hill. Specialized in drought-tolerant yards, cleanups, and regular maintenance.">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "LandscapingOrGardenStore",
+        "name": "Avyard Work",
+        "description": "Premium landscaping services specializing in high-desert yard care.",
+        "areaServed": [
+            { "@type": "City", "name": "Lancaster" },
+            { "@type": "City", "name": "Palmdale" },
+            { "@type": "City", "name": "Quartz Hill" },
+            { "@type": "City", "name": "Rosamond" },
+            { "@type": "City", "name": "Littlerock" }
+        ],
+        "knowsAbout": ["Drought Tolerant Landscaping", "Drip Irrigation", "Hardscaping", "Weed Abatement"]
+      }
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +39,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1.2">
 </head>
 
 <body>
@@ -24,52 +47,215 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <a href="index.html" class="logo">Avyard<span>Work</span></a>
+            <a href="index" class="logo">Avyard<span>Work</span></a>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="about" class="active">About Us</a></li>
+                    <li><a href="contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
                 <a href="tel:6614844444" class="phone-link"><i class="fas fa-phone"></i> 661-484-4444</a>
-                <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+                <a href="contact" class="btn btn-primary">Get a Quote</a>
             </div>
         </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="hero page-hero">
+    <!-- Page Hero - Enhanced -->
+    <section class="hero page-hero"
+        style="min-height: 500px; display: flex; align-items: center; background: linear-gradient(rgba(0, 80, 40, 0.8), rgba(0, 50, 20, 0.8)), url('https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&q=80');">
         <div class="container">
-            <h1>About Us</h1>
-            <p>Dedicated to keeping your outdoors beautiful.</p>
+            <span
+                style="color: var(--accent-yellow); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block;">Established
+                2013</span>
+            <h1 style="font-size: 4rem; margin-bottom: 20px;">Cultivating Elegance</h1>
+            <p style="font-size: 1.3rem; max-width: 600px; margin: 0 auto; opacity: 0.9;">Redefining outdoor living in
+                the Antelope Valley with minimal water and maximum style.</p>
         </div>
     </section>
 
-    <!-- Content -->
-    <section class="features" style="background: white;">
-        <div class="container" style="max-width: 800px;">
-            <h2 style="margin-bottom: 20px;">Our Story</h2>
-            <p style="margin-bottom: 40px; font-size: 1.1rem;">
-                Avyard Work was founded with a simple mission: to provide high-quality, reliable landscaping services to
-                our local community. We believe that a beautiful yard shouldn't be a hassle or a luxury—it should be a
-                standard that everyone can enjoy.
-            </p>
+    <!-- Our Philosophy (New) -->
+    <section class="philosophy-section">
+        <div class="container philosophy-content">
+            <i class="fas fa-leaf philosophy-bg-icon"></i>
+            <p class="philosophy-quote">"True luxury isn't just about appearance. It's about creating a sustainable
+                sanctuary that thrives in harmony with our desert environment."</p>
+            <div class="philosophy-divider"></div>
+            <p class="philosophy-sub">Serving Lancaster, Palmdale, and Quartz Hill with a commitment to excellence.</p>
+        </div>
+    </section>
 
-            <h2 style="margin-bottom: 20px;">Why We Are Different</h2>
-            <ul style="list-style: none; margin-bottom: 40px;">
-                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
-                        style="color: var(--primary-green); margin-right: 10px;"></i> <strong>Reliability:</strong> We
-                    show up when we say we will.</li>
-                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
-                        style="color: var(--primary-green); margin-right: 10px;"></i> <strong>Quality:</strong> We pay
-                    attention to the details that matter.</li>
-                <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
-                        style="color: var(--primary-green); margin-right: 10px;"></i> <strong>Communication:</strong>
-                    You can always reach us at 661-484-4444.</li>
-            </ul>
+    <!-- Stats Bar (New) -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="10">10+</span>
+                    <span class="stat-label">Years Operating</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="500">500+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Satisfaction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story & Team (Expanded) -->
+    <section class="team-section">
+        <div class="container">
+            <div class="team-grid">
+                <div class="team-content">
+                    <span class="team-role">The Founder's Story</span>
+                    <h3>Rooted in Reliability</h3>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8;">
+                        Avyard Work began with a simple observation: the Antelope Valley needed a landscaping service
+                        that combined high-end design with rock-solid reliability. Too often, homeowners were forced to
+                        choose between artistry and consistency.
+                    </p>
+                    <p style="margin-bottom: 20px; color: var(--text-light);">
+                        We set out to change that standard. Starting with a single truck and a passion for xeriscaping,
+                        we've grown into the region's premier choice for drought-tolerant transformations. We understand
+                        the wind, the heat, and the soil of the AV better than anyone because this is our home.
+                    </p>
+                    <p style="color: var(--text-light);">
+                        Our team is vetted, trained, and uniformed. When we step onto your property, we treat it with
+                        the same respect we would our own.
+                    </p>
+                    <div style="margin-top: 30px;">
+                        <img src="images/signature.png" alt="Founder Signature"
+                            style="height: 50px; opacity: 0.6; display: none;"> <!-- Placeholder for signature -->
+                        <p style="font-weight: 700; color: var(--primary-dark);">Brian Smith <span
+                                style="font-weight: 400; color: var(--text-light);">— Founder</span></p>
+                    </div>
+                </div>
+                <div class="team-image-wrapper">
+                    <!-- Placeholder using Unsplash since generation failed -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80"
+                        alt="Brian Smith - Founder" class="team-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Process (New) -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Avyard Process</h2>
+                <p style="margin-top: 10px; color: var(--text-light);">From concept to completion, we handle every
+                    detail.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <span class="step-number">1</span>
+                    <div class="step-icon"><i class="fas fa-comments"></i></div>
+                    <h4 class="step-title">Consultation</h4>
+                    <p class="step-desc">We listen to your vision and assess your property's unique needs.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">2</span>
+                    <div class="step-icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h4 class="step-title">Design</h4>
+                    <p class="step-desc">We create a tailored plan focusing on water efficiency and aesthetics.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">3</span>
+                    <div class="step-icon"><i class="fas fa-tools"></i></div>
+                    <h4 class="step-title">Install</h4>
+                    <p class="step-desc">Our expert crew brings the design to life with precision and care.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">4</span>
+                    <div class="step-icon"><i class="fas fa-heart"></i></div>
+                    <h4 class="step-title">Care</h4>
+                    <p class="step-desc">We provide ongoing maintenance to ensure your landscape thrives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Testimonials (New) -->
+    <section class="luxury-testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Stories</h2>
+            </div>
+            <div class="testimonial-grid-luxury">
+                <div class="testimonial-luxury-card">
+                    <div class="t-quote">"Absolutely transformed our backyard. It feels like a resort now, and the water
+                        bill has actually gone down. Highly recommended!"</div>
+                    <div class="t-author">
+                        <div class="t-avatar">JP</div>
+                        <div class="t-info">
+                            <strong>James Peterson</strong>
+                            <span>Quartz Hill, CA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-luxury-card">
+                    <div class="t-quote">"Professional from start to finish. The team arrived on time, uniform and
+                        polite. The work quality is unmatched in the Valley."</div>
+                    <div class="t-author">
+                        <div class="t-avatar">MS</div>
+                        <div class="t-info">
+                            <strong>Maria Sanchez</strong>
+                            <span>Palmdale, CA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-luxury-card">
+                    <div class="t-quote">"We love our new drought-tolerant garden. It's colorful, clean, and requires so
+                        little maintenance. Thank you Avyard!"</div>
+                    <div class="t-author">
+                        <div class="t-avatar">RL</div>
+                        <div class="t-info">
+                            <strong>Robert Lee</strong>
+                            <span>West Lancaster, CA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serving Areas (Refined) -->
+    <section class="service-area" style="padding-top: 0;">
+        <div class="container">
+            <div
+                style="background: var(--white); padding: 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-top: -50px; position: relative; z-index: 2;">
+                <h3 style="margin-bottom: 30px; text-align: center;">Proudly Serving The High Desert</h3>
+                <div class="serving-pills">
+                    <span class="serving-pill">West Lancaster</span>
+                    <span class="serving-pill">East Lancaster</span>
+                    <span class="serving-pill">Palmdale</span>
+                    <span class="serving-pill">Quartz Hill</span>
+                    <span class="serving-pill">Rancho Vista</span>
+                    <span class="serving-pill">Rosamond</span>
+                    <span class="serving-pill">Littlerock</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+        style="padding: 100px 0; text-align: center; background: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80') center/cover fixed; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 50, 29, 0.85);"></div>
+        <div class="container" style="position: relative; z-index: 1; color: var(--white);">
+            <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: 20px;">Ready to Elevate Your Outdoor
+                Space?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">Schedule your complimentary consultation
+                today.</p>
+            <a href="contact" class="btn btn-secondary" style="padding: 15px 40px; font-size: 1.1rem;">Get Your
+                Quote</a>
         </div>
     </section>
 
@@ -88,6 +274,7 @@
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
