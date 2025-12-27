@@ -38,7 +38,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="stylesheet" href="/styles.css?v=1.1">
+    <link rel="stylesheet" href="styles.css?v=1.2">
 </head>
 
 <body>
@@ -47,17 +47,18 @@
     <header>
         <div class="container">
             <a href="/" class="logo">Avyard<span>Work</span></a>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button><nav class="nav-menu">
+            <nav class="nav-menu">
                 <ul>
                     <li><a href="/" class="active">Home</a></li>
-                    <li><a href="/services/">Services</a></li>
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="services/">Services</a></li>
+                    <li><a href="about/">About Us</a></li>
+                    <li><a href="contact/">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
                 <a href="tel:6614844444" class="phone-link mobile-hide"><i class="fas fa-phone"></i> 661-484-4444</a>
-                <a href="/contact/" class="btn btn-primary">Get a Quote</a>
+                <a href="contact/" class="btn btn-primary">Get a Quote</a>
+                <button class="mobile-menu-btn" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
@@ -69,8 +70,8 @@
             <p>Professional landscaping services tailored to Lancaster & Palmdale. Reliable, affordable, and always
                 green.</p>
             <div class="hero-btns">
-                <a href="/contact/" class="btn btn-primary">Get Started</a>
-                <a href="/services/" class="btn btn-secondary">Our Services</a>
+                <a href="contact/" class="btn btn-primary">Get Started</a>
+                <a href="services/" class="btn btn-secondary">Our Services</a>
             </div>
         </div>
     </section>
@@ -110,7 +111,7 @@
             </div>
             <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
                 <div class="service-card">
-                    <img src="/images/service-mowing.png" alt="Lawn Mowing" class="service-bg">
+                    <img src="images/service-mowing.png" alt="Lawn Mowing" class="service-bg">
                     <div class="service-overlay">
                         <h3>Lawn Mowing</h3>
                         <p>Weekly maintenance for Lancaster & Palmdale homes.</p>
@@ -266,6 +267,41 @@
                 const item = button.parentElement;
                 item.classList.toggle('active');
             });
+        });
+
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            const icon = mobileBtn ? mobileBtn.querySelector('i') : null;
+
+            if (mobileBtn && navMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+
+                    // Toggle icon
+                    if (icon) {
+                        if (navMenu.classList.contains('active')) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-times');
+                        } else {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+
+                // Close menu when clicking a link
+                navMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
         });
     </script>
 </body>

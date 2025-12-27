@@ -177,22 +177,26 @@ nav a.active {
 @media (max-width: 768px) {
 
     /* Hide specific elements on mobile */
+    /* Hide specific elements on mobile */
     .mobile-hide {
+        display: none !important;
+    }
+
+    .header-actions .btn {
         display: none !important;
     }
 
     /* Show hamburger button */
     .mobile-menu-btn {
         display: block;
-        order: 3;
-        /* Ensure it's on the right */
+        /* Removed 'order' property as it is now structurally last in the div */
     }
 
     /* Header Actions adjustment */
     .header-actions {
         gap: 10px;
-        margin-right: 15px;
-        /* Space for hamburger */
+        margin-right: 0;
+        /* No longer need extra space as button is inside */
     }
 
     .btn {
