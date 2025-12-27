@@ -1,16 +1,5 @@
-RewriteEngine On
+# Directory-based structure is now in use (e.g. /about/index.html).
+# No complex rewrites are needed.
 
-# -------------------------------------------------
-# Redirect .html to clean URL (external redirect)
-# -------------------------------------------------
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteRule ^ %1 [R=301,L]
-
-# -------------------------------------------------
-# Serve clean URLs by mapping to .html files
-# (ONLY if the .html file exists)
-# -------------------------------------------------
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)$ $1.html [L]
+# Prevent directory listing
+Options -Indexes
