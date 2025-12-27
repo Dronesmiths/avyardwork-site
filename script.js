@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const icon = mobileBtn ? mobileBtn.querySelector('i') : null;
 
     if (mobileBtn && navMenu) {
-        mobileBtn.addEventListener('click', () => {
+        mobileBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent bubbling
             navMenu.classList.toggle('active');
 
             // Toggle icon
@@ -45,6 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     icon.classList.add('fa-bars');
                 }
             });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
         });
     }
 });
