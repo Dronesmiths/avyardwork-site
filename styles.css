@@ -107,6 +107,8 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    /* Needed for absolute positioning of mobile menu */
 }
 
 .logo {
@@ -114,12 +116,15 @@ header .container {
     font-size: 24px;
     font-weight: 800;
     color: var(--primary-green);
+    z-index: 1001;
+    /* Ensure logo stays above menu */
 }
 
 .logo span {
     color: var(--accent-yellow);
 }
 
+/* Desktop Navigation */
 nav ul {
     display: flex;
     list-style: none;
@@ -140,6 +145,8 @@ nav a.active {
     display: flex;
     align-items: center;
     gap: 20px;
+    z-index: 1001;
+    /* Ensure actions (like Get Quote) stay above if needed */
 }
 
 .phone-link {
@@ -152,6 +159,78 @@ nav a.active {
 
 .phone-link:hover {
     color: var(--primary-green);
+}
+
+/* Mobile Menu Button - Hidden mainly */
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 5px;
+}
+
+/* Responsive Mobile Header */
+@media (max-width: 768px) {
+
+    /* Hide specific elements on mobile */
+    .mobile-hide {
+        display: none !important;
+    }
+
+    /* Show hamburger button */
+    .mobile-menu-btn {
+        display: block;
+        order: 3;
+        /* Ensure it's on the right */
+    }
+
+    /* Header Actions adjustment */
+    .header-actions {
+        gap: 10px;
+        margin-right: 15px;
+        /* Space for hamburger */
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Mobile Navigation Menu */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transform: translateY(-150%);
+        /* Hidden by default */
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    nav.active {
+        transform: translateY(0);
+        /* Slide down */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        font-size: 1.1rem;
+        padding: 10px;
+    }
 }
 
 /* Hero Section */
@@ -432,10 +511,7 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    nav ul {
-        display: none;
-        /* Simple hide for now, would need JS for toggle */
-    }
+    /* Legacy nav ul hidden rule removed */
 
     .hero h1 {
         font-size: 2.5rem;
@@ -538,7 +614,9 @@ footer {
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 113, 61, 0.2);
-}/* =========================================
+}
+
+/* =========================================
    Luxury Redesign - About Page Additions
    ========================================= */
 
