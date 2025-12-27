@@ -1,16 +1,26 @@
 RewriteEngine On
-
-# Ensure FollowSymLinks is enabled (often required for ModRewrite)
 Options +FollowSymLinks
 
-# 1. Force remove .html extension (Redirect)
-# If someone visits /page.html, redirect them to /page
-# Exclude the request if it's already an internal rewrite
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L,NE]
+# -------------------------------------------------
+# Skip existing files and directories (CRITICAL)
+# -------------------------------------------------
+# If the request matches a real file or directory, stop processing.
+# This is excellent for performance and prevents accidental rewriting of assets.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
-# 2. Internally serve .html files (Rewrite)
-# If someone visits /page, serve /page.html without showing .html in URL
-RewriteCond %{REQUEST_FILENAME} !-d
+# -------------------------------------------------
+# Force remove .html extension (301 redirect)
+# -------------------------------------------------
+# If someone visits /page.html, redirect them to /page
+# Added a leading slash /%1 to make it an absolute path, which is safer.
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# -------------------------------------------------
+# Internally serve .html files
+# -------------------------------------------------
+# Internal rewrite: map /page to /page.html so the server can find it.
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L,QSA]
