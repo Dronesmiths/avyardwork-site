@@ -252,8 +252,8 @@ nav a.active {
 
 .page-hero {
     padding: 120px 0 80px;
-    background: linear-gradient(rgba(0, 80, 40, 0.9), rgba(0, 113, 61, 0.9)), url('https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&q=80');
-    /* Mowing image as BG */
+    background: linear-gradient(rgba(0, 80, 40, 0.9), rgba(0, 113, 61, 0.9)), url('https://images.unsplash.com/photo-1557429287-b2e26467fc2b?auto=format&fit=crop&q=80');
+    /* Green grass/lawn image as BG */
     background-size: cover;
     background-position: center;
 }
