@@ -107,28 +107,40 @@
     </section>
 
     <!-- Before & After Section -->
-    <section class="comparison-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Before & After: Lawn Transformations</h2>
-                <p>Drag the slider to see the difference professional care makes.</p>
+    <section class="av-yard-ba">
+        <div class="av-yard-ba-inner">
+            <h2>Before & After: Yard Cleanup Transformations</h2>
+            <p class="av-yard-ba-lead">
+                Overgrown weeds and neglected lawns are common in the Antelope Valley.
+                One professional yard cleanup can completely restore curb appeal
+                and bring your property back under control.
+            </p>
+
+            <!-- INTERACTION INSTRUCTION -->
+            <div class="av-yard-ba-instruction">
+                <span class="av-yard-ba-icon">⇆</span>
+                <span>Drag the slider left or right to compare</span>
             </div>
 
-            <div class="slider-container" id="comparisonSlider">
-                <!-- Background Image (After) -->
-                <img src="../../images/after.png" alt="After Lawn Care" class="slider-img img-background">
-                <span class="slider-label label-after">After</span>
+            <!-- FRAME -->
+            <div class="av-yard-ba-frame">
+                <div class="av-yard-ba-slider">
+                    <!-- BEFORE -->
+                    <img src="../../images/before.png"
+                        alt="Overgrown yard before professional yard cleanup in the Antelope Valley"
+                        class="av-yard-before">
 
-                <!-- Foreground Image (Before) - Resizable -->
-                <div class="slider-img img-foreground" id="sliderForeground">
-                    <img src="../../images/before.png" alt="Before Lawn Care"
-                        style="width: 100vw; max-width: 900px; height: 100%; object-fit: cover;">
-                    <span class="slider-label label-before">Before</span>
-                </div>
+                    <!-- AFTER -->
+                    <img src="../../images/after.png" alt="Clean yard after professional yard work service"
+                        class="av-yard-after">
 
-                <!-- Handle (Centered by CSS, moved by JS) -->
-                <div class="slider-handle" id="sliderHandle">
-                    <i class="fas fa-arrows-alt-h"></i>
+                    <input type="range" min="0" max="100" value="50" class="av-yard-range">
+
+                    <div class="av-yard-divider"></div>
+                    <div class="av-yard-handle">⇆</div>
+
+                    <div class="av-yard-pill av-yard-before-pill">Before</div>
+                    <div class="av-yard-pill av-yard-after-pill">After</div>
                 </div>
             </div>
         </div>

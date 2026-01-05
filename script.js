@@ -67,47 +67,22 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // Comparison Slider Logic
-    const sliderContainer = document.getElementById('comparisonSlider');
-    const sliderForeground = document.getElementById('sliderForeground');
-    const sliderHandle = document.getElementById('sliderHandle');
+    // Comparison Slider Logic (New Range Input Method)
+    document.querySelectorAll('.av-yard-ba-slider').forEach(slider => {
+        const range = slider.querySelector('.av-yard-range');
+        const after = slider.querySelector('.av-yard-after');
+        const divider = slider.querySelector('.av-yard-divider');
+        const handle = slider.querySelector('.av-yard-handle');
 
-    if (sliderContainer && sliderForeground && sliderHandle) {
-        let isDragging = false;
+        function update(val) {
+            after.style.clipPath = `inset(0 0 0 ${val}%)`;
+            divider.style.left = val + '%';
+            handle.style.left = val + '%';
+        }
 
-        const moveSlider = (e) => {
-            if (!isDragging) return;
-
-            // Get clientX for touch or mouse
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            const rect = sliderContainer.getBoundingClientRect();
-            let x = clientX - rect.left;
-
-            // Constrain within container
-            if (x < 0) x = 0;
-            if (x > rect.width) x = rect.width;
-
-            const percentage = (x / rect.width) * 100;
-
-            sliderForeground.style.width = `${percentage}%`;
-            sliderHandle.style.left = `${percentage}%`;
-        };
-
-        // Mouse Events
-        sliderContainer.addEventListener('mousedown', () => isDragging = true);
-        window.addEventListener('mouseup', () => isDragging = false);
-        window.addEventListener('mousemove', moveSlider);
-
-        // Touch Events
-        sliderContainer.addEventListener('touchstart', () => isDragging = true);
-        window.addEventListener('touchend', () => isDragging = false);
-        window.addEventListener('touchmove', moveSlider);
-
-        // Click to jump
-        sliderContainer.addEventListener('click', (e) => {
-            isDragging = true;
-            moveSlider(e);
-            isDragging = false;
-        });
-    }
+        if (range && after && divider && handle) {
+            update(range.value);
+            range.addEventListener('input', e => update(e.target.value));
+        }
+    });
 });
