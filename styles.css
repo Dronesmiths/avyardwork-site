@@ -1363,6 +1363,16 @@ footer {
     font-size: 0.9rem;
 }
 
+.aw-footer-locations a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.aw-footer-locations a:hover {
+    color: var(--accent-yellow);
+}
+
 .aw-footer-bottom {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 20px 0;
