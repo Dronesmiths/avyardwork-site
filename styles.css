@@ -117,11 +117,14 @@ header .container {
     font-weight: 800;
     color: var(--primary-green);
     z-index: 1001;
-    /* Ensure logo stays above menu */
+    /* Border effect for better visibility */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .logo span {
     color: var(--accent-yellow);
+    /* Ensure the border effect applies here too, inheriting or reinforcing */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 /* Desktop Navigation */
