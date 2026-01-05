@@ -1833,3 +1833,159 @@ footer {
         max-width: 340px;
     }
 }
+
+/* ===================================== */
+/* YARD SERVICE PRICING — LUXURY         */
+/* ===================================== */
+
+.av-pricing-section {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, #ffffff, var(--bg-green-tint));
+    font-family: var(--font-heading);
+}
+
+.av-pricing-inner {
+    max-width: var(--container-width);
+    margin: auto;
+}
+
+.av-pricing-section h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin-bottom: 18px;
+}
+
+.av-pricing-section .av-pricing-intro {
+    max-width: 900px;
+    margin: 0 auto 70px;
+    text-align: center;
+    font-size: 1.15rem;
+    color: var(--text-light);
+}
+
+.av-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.av-pricing-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 22px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.av-pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.av-pricing-card.featured {
+    box-shadow: 0 22px 50px rgba(0, 113, 61, 0.15);
+    border: 3px solid var(--accent-yellow);
+    position: relative;
+}
+
+.av-pricing-badge {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--primary-green);
+    letter-spacing: .1em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.av-pricing-card h3 {
+    font-size: 24px;
+    color: var(--primary-green);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.av-pricing-price {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin: 15px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.av-pricing-price span {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.av-pricing-desc {
+    color: var(--text-light);
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.av-pricing-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.av-pricing-features li {
+    padding-left: 28px;
+    position: relative;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.av-pricing-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: 900;
+}
+
+.av-pricing-cta {
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 16px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 113, 61, 0.2);
+}
+
+.av-pricing-cta:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 113, 61, 0.3);
+}
+
+.av-pricing-card.featured .av-pricing-cta {
+    background: var(--primary-green);
+    border: 2px solid var(--accent-yellow);
+}
+
+@media (max-width: 768px) {
+    .av-pricing-section h2 {
+        font-size: 32px;
+    }
+
+    .av-pricing-section {
+        padding: 70px 20px;
+    }
+}
