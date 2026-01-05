@@ -313,6 +313,30 @@ nav a.active {
     gap: 30px;
 }
 
+/* 
+   Balanced Grid Utility for 4 items 
+   Ensures 4 items are evenly distributed 
+   Mobile: 1 column
+   Tablet: 2 columns
+   Desktop: 4 columns
+*/
+.features-grid.grid-balance-4 {
+    grid-template-columns: 1fr;
+    /* Default Mobile */
+}
+
+@media (min-width: 768px) {
+    .features-grid.grid-balance-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .features-grid.grid-balance-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .feature-card {
     background: var(--white);
     padding: 40px 30px;
