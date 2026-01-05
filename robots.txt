@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://avyardwork.com/sitemap.xml
+
+# Disallow admin/temp directories if any exist
+Disallow: /admin/
+Disallow: /.git/
