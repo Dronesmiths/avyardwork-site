@@ -66,4 +66,48 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // Comparison Slider Logic
+    const sliderContainer = document.getElementById('comparisonSlider');
+    const sliderForeground = document.getElementById('sliderForeground');
+    const sliderHandle = document.getElementById('sliderHandle');
+
+    if (sliderContainer && sliderForeground && sliderHandle) {
+        let isDragging = false;
+
+        const moveSlider = (e) => {
+            if (!isDragging) return;
+
+            // Get clientX for touch or mouse
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const rect = sliderContainer.getBoundingClientRect();
+            let x = clientX - rect.left;
+
+            // Constrain within container
+            if (x < 0) x = 0;
+            if (x > rect.width) x = rect.width;
+
+            const percentage = (x / rect.width) * 100;
+
+            sliderForeground.style.width = `${percentage}%`;
+            sliderHandle.style.left = `${percentage}%`;
+        };
+
+        // Mouse Events
+        sliderContainer.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', moveSlider);
+
+        // Touch Events
+        sliderContainer.addEventListener('touchstart', () => isDragging = true);
+        window.addEventListener('touchend', () => isDragging = false);
+        window.addEventListener('touchmove', moveSlider);
+
+        // Click to jump
+        sliderContainer.addEventListener('click', (e) => {
+            isDragging = true;
+            moveSlider(e);
+            isDragging = false;
+        });
+    }
 });

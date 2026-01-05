@@ -106,6 +106,34 @@
         </div>
     </section>
 
+    <!-- Before & After Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Before & After: Lawn Transformations</h2>
+                <p>Drag the slider to see the difference professional care makes.</p>
+            </div>
+
+            <div class="slider-container" id="comparisonSlider">
+                <!-- Background Image (After) -->
+                <img src="../../images/temp_after.png" alt="After Lawn Care" class="slider-img img-background">
+                <span class="slider-label label-after">After</span>
+
+                <!-- Foreground Image (Before) - Resizable -->
+                <div class="slider-img img-foreground" id="sliderForeground">
+                    <img src="../../images/temp_before.png" alt="Before Lawn Care"
+                        style="width: 100vw; max-width: 900px; height: 100%; object-fit: cover;">
+                    <span class="slider-label label-before">Before</span>
+                </div>
+
+                <!-- Handle (Centered by CSS, moved by JS) -->
+                <div class="slider-handle" id="sliderHandle">
+                    <i class="fas fa-arrows-alt-h"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features">
         <div class="container">
