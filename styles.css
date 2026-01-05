@@ -1331,6 +1331,38 @@ footer {
     opacity: 0.9;
 }
 
+.aw-footer-services a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.aw-footer-services a:hover {
+    color: var(--accent-yellow);
+}
+
+.aw-footer-locations {
+    flex: 1;
+    min-width: 200px;
+}
+
+.aw-footer-locations h4 {
+    color: var(--accent-yellow);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.aw-footer-locations ul {
+    list-style: none;
+    padding: 0;
+}
+
+.aw-footer-locations li {
+    margin-bottom: 10px;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
 .aw-footer-bottom {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 20px 0;
