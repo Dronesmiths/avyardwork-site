@@ -7,6 +7,8 @@
     --text-light: #666666;
     --white: #ffffff;
     --bg-light: #F9F9F9;
+    --bg-green-tint: #E8F5E9;
+    /* Light green for sections */
 
     /* Fonts */
     --font-heading: 'Poppins', sans-serif;
@@ -284,6 +286,10 @@ nav a.active {
 .features {
     padding: 80px 0;
     background-color: var(--bg-light);
+}
+
+.bg-green-tint {
+    background-color: var(--bg-green-tint);
 }
 
 .section-title {
