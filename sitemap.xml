@@ -52,6 +52,50 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Blog Section -->
+  <url>
+    <loc>https://avyardwork.online/blog/</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://avyardwork.online/blog/desert-lawn-care-guide/</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://avyardwork.online/blog/spring-lawn-prep-palmdale/</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://avyardwork.online/blog/xeriscaping-antelope-valley/</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://avyardwork.online/blog/irrigation-problems-signs/</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://avyardwork.online/blog/hoa-lawn-violations/</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  
   <!-- Service Pages -->
   <url>
     <loc>https://avyardwork.online/services/lawn-mowing/</loc>
